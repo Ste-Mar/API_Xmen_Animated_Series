@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>About Us</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" href="about.css" />
+		<link rel="shortcut icon" href="img/icon_html.png" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Bangers"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Oswald:wght@700&display=swap
+            "
+		/>
+
+		<script
+			src="https://kit.fontawesome.com/4408e71892.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="about.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html">
+				<img src="img/icon.png" alt="icon X-MEN" id="icon" />
+			</a>
+			<nav class="nav-bar">
+				<audio id="play" src="audio/xmen-opening.mp3" loop></audio>
+				<i
+					class="speaker fas fa-volume-mute"
+					id="speaker"
+					onclick="Volume(id)"
+				></i>
+				<a href="doc.html" class="link ml-3">Doc</a>
+				<p class="link ml-3" id="about"><u>About</u></p>
+			</nav>
+		</header>
+		<section class="background">
+			<div class="container">
+
+				<p class="pt-3 titles-about">
+					<u>
+						What is this API for?
+					</u>
+				</p>
+
+				<p class="text-doc">
+					<span style="color: red; font-weight: bold">
+						X-MEN API
+					</span> is a RESTful based on the animated serie homonymous. 
+					You can access to all characters, their powers, affiliation, etc, and the episodes presented in each season.
+					Click on <span id="link-2"> Doc</span> seccion, and follow the steps to interact with the documentation.
+				</p>	
+
+				<p class="pt-3 titles-about">
+					<u>
+						Who are we?
+					</u>
+				</p>
+
+				<p class="text-doc">
+					We are <a href="https://github.com/bulga138" target="_blank" style="font-family: Bangers, Times New Roman;color:red">Nicolas Bulgarella</a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i> and <a href="https://github.com/Ste-Mar" target="_blank" style="font-family: Bangers, Times New Roman;color:red">Stefano Marcaccio</a>
+					<i style="font-size: 20px;" class="fas fa-external-link-alt"></i>. Like great geeks, we like superheroes and programming (...and a list of mandatory characteristics).
+				</p>	
+
+
+				<p class="pt-3 titles-about">
+					<u>
+						Why did we develop it?
+					</u>
+				</p>
+
+				<p class="text-doc">
+					It was a great opportunity for implement all the knowledge that we have gotten on our courses, and research those tools necessary for "tune up" an API.
+					This is the  <span style="color: red;">first model</span>. In the future, we would like to add and modify some characteristics on our website.</p>	
+
+
+				<p class="pt-3 titles-about">
+					<u>
+						What did we implement to develop it?
+					</u>
+				</p>
+
+				<p class="text-doc">
+				We used <span style="font-family: Oswald, sans-serif;color:red">Node, MongoDB, Heroku and Glitch</span> in backend development. All requests return in <span style="font-family: Oswald, sans-serif;color:red">JSON</span> format.
+				The hosting of  the website is carry out through <span style="font-family: Oswald, sans-serif;color:red">Netlify</span>
+
+				<p class="pt-3 titles-about">
+					<u>
+						Copyright and references
+					</u>
+				</p>
+
+				<p class="text-doc pb-5" style="margin-bottom: 0px;">
+				In regards the information used, all rights belong to <a href="https://marvelanimated.fandom.com/wiki/Marvel_Animated_Universe_Wiki" target="_blank" style="font-family: Oswald, sans-serif;color:red">Marvel Animated Wiki</a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>,
+				<a href="https://www.imdb.com/title/tt0103584/" target="_blank" style="font-family: Oswald, sans-serif;color:red">IMDB (plots)</a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>, and
+				<a href="https://www.disneyplus.com/es-419/series/x-men/6vjPLmGOukEp" target="_blank" style="font-family: Oswald, sans-serif;color:red">Disney+ (episodes list)</a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>.
+
+
+				The web design was referenced from the <a href="https://rickandmortyapi.com/" target="_blank" style="font-family: Oswald, sans-serif;color:red">Rick and Morty API</a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>. If you can help their project, it would be amazing. 
+				They did an excellent work and need mantain the API's infrastructure alive. Click <a href=https://www.buymeacoffee.com/axelfuh target="_blank" style="font-weight:bold;color:blue">HERE</a> for help them.
+				</p>
+
+			</div> 
+
+		</section>
+
+		<footer>
+			<div class="row" style="width:100%">
+				<div class="col-12 col-md-4">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th></th>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Information access (JSON)
+                            </u>
+                        </th>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/characters" target="_blank">
+                                CHARACTERS</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/episodes" target="_blank">
+                                EPISODES</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;">2021</th>
+						</tr>
+						<tr>
+                            <td><a class="link" href="https://github.com/Ste-Mar/API_Xmen_Animated_Series" target="_blank"><i class="fab fa-github"></i></a></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+				<div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Authors</th>
+                            </u>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Nicolas Bulgarella</td>
+                            <td><a class="link" href="https://github.com/bulga138" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/nicolas-bulgarella/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Stefano Marcaccio</td>
+                            <td><a class="link" href="https://github.com/Ste-Mar" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/stefanomarcaccio/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+				</div>
+		</footer>
+	</body>
+</html>

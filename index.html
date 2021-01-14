@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Welcome X-MEN API</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+        />
+
+		<link rel="stylesheet" href="index.css" />
+		<link rel="shortcut icon" href="img/icon_html.png" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Bangers"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Oswald:wght@700&display=swap
+            "
+		/>
+
+		<script
+			src="https://kit.fontawesome.com/4408e71892.js"
+			crossorigin="anonymous"
+        ></script>
+        
+
+		<script src="index.js"></script>
+    </head>
+	<body>
+        <header>
+                    <a href="index.html">
+                        <img src="img/icon.png" alt="icon X-MEN" id="icon" />
+                    </a>
+                    <nav class="nav-bar">
+                        <audio id="play" src="audio/xmen-opening.mp3" loop></audio>
+                        <i
+                            class="speaker fas fa-volume-mute"
+                            id="speaker"
+                            onclick="Volume(id)"
+                        ></i>
+                        <a class="link ml-3" href="doc.html">Doc</a>
+                        <a class="link ml-3" href="about.html">About</a>
+                    </nav>
+        </header>
+		<section >
+			<div class="row row-title">
+                <div class="col-md-3 col-12 mt-4">
+                    <table class="tables">
+                        <tr>
+                            <th><img class="img-title" src="img/title.gif" /></th>
+                            <th>
+                                <h1 id="title">API</h1>
+
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+			</div>
+		</section>
+		<section class="background">
+			<div class="container">
+  
+                    <form  autocomplete="off" action=""  >
+                      <div class="autocomplete clearable-input pt-3" >
+                        <input id="input" class="form-control" type="text" placeholder="Insert character name" >
+                        <div  data-clear-input>
+                            <button type="button" class="btn mt-3 mb-3 btn-danger">
+                              X
+                            </button>
+                        </div>
+                    </div>
+                      </form>
+               
+
+
+
+                <div class="row" id="apiR"></div>
+                <p class="container-fluid" id="message"></p>
+
+                <div class="row pagination justify-content-center pt-2 pb-2">
+                    <button id="btn-prev" class="btn btn-default someclass" style="font-size: 20px">&laquo;</button>
+                    <button id="btn-1" class="btn btn-default active" style="font-size: 20px">1</button>
+                    <button id="btn-2" class="btn btn-default someclass" style="font-size: 20px">2</button>
+                    <button id="btn-next" class="btn btn-default someclass" style="font-size: 20px">&raquo;</button>
+                </div>
+
+
+                
+			</div>
+		</section>
+		<footer>
+			<div class="row">
+				<div class="col-12 col-md-4">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th></th>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Information access (JSON)
+                            </u>
+                        </th>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/characters" target="_blank">
+                                CHARACTERS</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/episodes" target="_blank">
+                                EPISODES</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;">2021</th>
+                        </tr>
+                         <tr>
+                            <td><a class="link" href="https://github.com/Ste-Mar/API_Xmen_Animated_Series" target="_blank"><i class="fab fa-github"></i></a></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+				<div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Authors</th>
+                            </u>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Nicolas Bulgarella</td>
+                            <td><a class="link" href="https://github.com/bulga138" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/nicolas-bulgarella/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Stefano Marcaccio</td>
+                            <td><a class="link" href="https://github.com/Ste-Mar" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/stefanomarcaccio/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+				</div>
+		</footer>
+	</body>
+</html>

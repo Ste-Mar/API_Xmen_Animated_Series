@@ -1,0 +1,269 @@
+header {
+	background-color: red;
+	justify-content: space-between;
+	display: flex;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+#icon {
+	height: 60px;
+	width: 120px;
+	margin: 2px 0px 2px 15px;
+}
+
+.speaker {
+	margin-top: 13px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.nav-bar {
+	margin-top: 10px;
+	margin-right: 20px;
+	display: flex;
+	font-size: 20px;
+}
+
+.nav-link {
+	font-family: "Bangers", "Times new Roman";
+	background-color: black;
+}
+
+.row {
+	margin-right: 0px;
+}
+
+.link {
+	font-family: "Bangers", "Times New Roman";
+	font-size: 30px;
+	color: yellow;
+	cursor: pointer;
+}
+
+.link:hover {
+	color: black;
+}
+
+#doc {
+	color: black;
+}
+
+.background-aside {
+	background-color: yellow;
+	border: 1px solid rgb(182, 182, 182);
+	padding: 1.5rem;
+}
+
+#fixed-aside {
+	position: sticky;
+	top: 80px;
+}
+
+@media (max-width: 55.625em) {
+	.background-aside {
+		display: none;
+	}
+}
+
+table {
+	font-family: "Oswald", sans-serif;
+	font-size: 30px;
+}
+
+.background-text {
+	position: relative;
+	opacity: initial;
+	padding-top: 100px;
+}
+
+.background-text::before {
+	content: "";
+	background-image: url("img/background.jpg");
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	opacity: 0.3;
+	z-index: -1;
+}
+.sections-titles {
+	color: black;
+}
+.sections-titles:hover {
+	color: red;
+}
+
+.subitem {
+	font-size: 25px;
+	color: black;
+	cursor: pointer;
+}
+
+.subitem:hover {
+	color: red;
+	text-decoration: none;
+}
+
+.titles {
+	font-family: "Oswald", sans-serif;
+	font-size: 40px;
+}
+
+#intro,
+#apiResource,
+#characters,
+#charactersData,
+#getAllCharacters,
+#getOneCharacter,
+#applyFilterCharacter,
+#infoPags,
+#episodes,
+#episodeData,
+#getAllEpisodes,
+#getOneEpisode,
+#applyFilterEpisode {
+	padding-top: 62px;
+}
+
+.list-resources {
+	font-family: "Oswald", sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.list {
+	background-color: red;
+	border: 2px solid black;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	padding-left: 2px;
+}
+
+.subtitles {
+	font-family: "Oswald", sans-serif;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.text-doc {
+	font-family: "Oswald", sans-serif;
+	font-size: 20px;
+	text-align: justify;
+}
+
+#props {
+	width: 100%;
+	font-family: "Oswald", sans-serif;
+}
+
+#count {
+	color: red;
+	font-size: 20px;
+}
+
+.title-table-schema {
+	padding-left: 20px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+	font-size: 20px;
+}
+
+.data-table-schema {
+	padding-left: 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+	font-size: 20px;
+	color: rgba(26, 24, 24, 0.794);
+}
+
+.square-api {
+	background-color: yellow;
+	border: 1px solid red;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	color: black;
+	padding: 10px;
+	font-family: "Oswald", sans-serif;
+	text-align: center;
+}
+
+.petition {
+	color: black;
+	font-weight: bold;
+	border: 1px solid grey;
+	background-color: red;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	text-align: center;
+	padding-left: 2px;
+}
+
+.end-point {
+	color: red;
+	font-weight: bold;
+}
+
+.square-api-json {
+	background-color: yellow;
+	border: 1px solid red;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	color: black;
+}
+
+.key {
+	font-weight: bold;
+}
+
+.string {
+	font-weight: bold;
+	color: red;
+}
+
+.int {
+	font-weight: bold;
+	color: blue;
+}
+
+.null {
+	font-weight: bold;
+	color: green;
+}
+
+#query {
+	font-weight: initial;
+	background-color: yellow;
+	color: black;
+}
+
+#link-filter:hover {
+	background-color: yellow;
+}
+
+footer {
+	background-color: red;
+}
+
+.tables {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo-footer {
+	width: 30px;
+	height: 30px;
+}

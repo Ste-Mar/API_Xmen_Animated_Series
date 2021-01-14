@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Documentation</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="doc.css" />
+		<link rel="shortcut icon" href="img/icon_html.png" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Bangers"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Oswald:wght@700&display=swap
+            "
+		/>
+
+		<script
+			src="https://kit.fontawesome.com/4408e71892.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="doc.js"></script>
+	</head>
+	<body>
+		<header>
+			<a href="index.html">
+				<img src="img/icon.png" alt="icon X-MEN" id="icon" />
+			</a>
+			<nav class="nav-bar">
+				<audio id="play" src="audio/xmen-opening.mp3" loop></audio>
+				<i
+					class="speaker fas fa-volume-mute"
+					id="speaker"
+					onclick="Volume(id)"
+				></i>
+				<p class="link ml-3" id="doc"><u>Doc</u></p>
+				<a href="about.html" class="link ml-3">About</a>
+			</nav>
+		</header>
+		<div class="row">
+			<div class="background-aside col-md-2 col-0">
+				<div id="fixed-aside" class="">
+					<table>
+						<tr>
+							<th>
+								<a href="#intro">
+									<u class="sections-titles"
+										>Introduction</u
+									>
+								</a>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#apiResource"  class="subitem">API's resources</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a class="subitem" href="#infoPags">Info & Pagination</a>
+							</td>
+						</tr>
+					</table>
+
+					<table>
+						<tr>
+							<th>
+								<a href="#characters">
+									<u class="sections-titles">Characters</u></th>
+								</a>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#charactersData"  class="subitem">Character data</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#getAllCharacters"  class="subitem">Get all characters</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#getOneCharacter"  class="subitem">Get one character</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#applyFilterCharacter"  class="subitem">Apply filter</a>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<th>
+								<a href="#episodes">
+
+									<u class="sections-titles">Episodes</u></th>
+								</a>
+						</tr>
+						<tr>
+							<td><a href="#episodeData" class="subitem">Episode data</a></td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#getAllEpisodes"  class="subitem">Get all epidodes</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#getOneEpisode"  class="subitem">Get one episode</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a  href="#applyFilterEpisode"  class="subitem">Apply filter</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+
+			<div class="col-md-10 col-12 background-text">
+				<div class="ml-3">
+					<!-- INTRO -->
+					<p class="titles" id="intro">Introduction</p>
+
+					<p class="text-doc">
+						This section outlines the different queries you can
+						perform using the
+						<span style="color: red; font-weight: bold">
+							X-MEN Animated Serie API.
+						</span>
+						In the sidebar (only on PC), you will find the features
+						presented. By clicking on them, you will be redirected
+						to the desired section.
+					</p>
+
+
+					<p class="subtitles" id="apiResource">API's resources</p>
+
+					<p class="text-doc">
+						You can access to two location in the API. Both return their information in JSON format.
+					</p>
+
+					<div class="square-api">
+						<span> <span class="petition mr-2"> GET </span> <code class="end-point">xmenapiheroku.herokuapp.com/api/</code>
+					</span>
+					</div>
+
+					<div class="square-api-json mt-1">
+						<pre class="pt-3">
+							<code>
+		    <span>{</span>		
+		         <span class="key">characters</span>: <span class="string">"https://xmenapiheroku.herokuapp.com/api/characters"</span>,
+		         <span class="key">episodes</span>: <span class="string">"https://xmenapiheroku.herokuapp.com/api/episodes"</span>
+		    <span>}</span></code></pre>
+					</div>
+
+					<p class="text-doc mt-2">
+						Each resource contains:
+							<ul class="list-resources">
+								<li class="mb-4">
+									<span class="list">
+										characters
+									</span> 
+									: All protagonists of the XMEN animated serie and their characteristics
+								</li>
+								<li>
+									<span class="list">
+										episodes
+									</span> 		
+									: All episodes with their title, plot, air date and number of the episode/season
+								</li>
+							</ul>
+					</p>
+
+
+
+
+					<p class="subtitles" id="infoPags">Info & pagination</p>
+
+					<p class="text-doc">
+						When you access to one resource, is presented the <code class="end-point">info</code> of the API in JSON format. You always will receive six <code class="end-point">key</code> values:
+					</p>
+
+					<table id="props">
+						<thead>
+							<tr class="title-table-schema">
+								<th>Key</th>
+								<th>Type</th>
+								<th>Characteristics</th>
+							</tr>
+							<tr class="data-table-schema">
+								<td>count</td>
+								<td>int</td>
+								<td>The length of the response</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>limit</td>
+								<td>int</td>
+								<td>Maximum number of object receive per page</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>pageCount</td>
+								<td>int</td>
+								<td>Total number of pages</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>page</td>
+								<td>int</td>
+								<td>Current page position</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>prev</td>
+								<td>string(URL)</td>
+								<td>Link to the previous page</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>next</td>
+								<td>string(URL)</td>
+								<td>
+									Link to the next page
+								</td>
+							</tr>
+						</thead>
+					</table>
+					
+					<div class="square-api mt-4">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api/<code class="end-point">characters</code>
+					</span></div>
+	
+					<div class="square-api-json mt-1">
+						<pre class="pt-3">
+							<code>
+		    <span>{</span>		
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int" id="count-json"></span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">2</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="string">"https://xmenapiheroku.herokuapp.com/api/characters?page=2"</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+					</div>
+
+
+					<p class="text-doc mt-4">
+						Due to the pagination, is possible access to a specific page. For that, you need to complete the final API's resource with <code class="end-point">/?page=pageNumber</code>. 
+						In case of it is not specified, you will receive the first page.  
+					</p>
+
+					<div class="square-api mt-4">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api/<code class="end-point">episodes/?page=1</code>
+					</span></div>
+	
+				
+				<div class="square-api-json mt-1 ">
+					<pre class="pt-3">
+						<code>
+		    <span>{</span>		
+		         <span class="key">results</span>: <span>[</span>
+			    <span>{</span>
+				<span class="key">id</span>: <span class="int">1</span>,
+				<span class="key">title</span>: <span class="string">"Night of the Sentinels, Part One"</span>,
+				<span class="key">number</span>: <span class="string">"S01E01"</span>,
+				<span class="key">air_date</span>: <span class="string">"31/10/1992"</span>
+				<span class="key">plot</span>: <span class="string">"A young teenager has been rejecting her mutant powers ever since she discovered them. But when giant robots track her down, it's up to the X-Men to save her."</span>
+			    <span>},</span>...
+			 <span class="key">]</span>,
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int">76</span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">4</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="string">"https://xmenapiheroku.herokuapp.com/api/episodes?page=2"</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+				</div>
+
+					<!-- CHARACTERS -->
+
+					<p class="titles" id="characters">Characters</p>
+	
+					<p class="text-doc">
+						At the moment, the API contains
+						<code id="count"> </code> characters.
+					</p>
+					<p class="subtitles" id="charactersData">Character data</p>
+	
+					<table id="props">
+						<thead>
+							<tr class="title-table-schema">
+								<th>Key</th>
+								<th>Type</th>
+								<th>Characteristics</th>
+							</tr>
+							<tr class="data-table-schema">
+								<td>id</td>
+								<td>int</td>
+								<td>Character id number</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>name</td>
+								<td>string</td>
+								<td>Character real name</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>alias</td>
+								<td>string</td>
+								<td>Character alternate identity</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>description</td>
+								<td>string</td>
+								<td>Character brief description</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>powers</td>
+								<td>string/array</td>
+								<td>List of powers</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>img</td>
+								<td>string (URL)</td>
+								<td>
+									Link to the character´s image. The image's size is equal to 300px x 250px.
+								</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>affiliation</td>
+								<td>string</td>
+								<td>Character team group</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>created</td>
+								<td>string</td>
+								<td>Object creation date</td>
+							</tr>
+						</thead>
+					</table>
+	
+
+					<!-- // Get all characters  -->
+
+					<p class="subtitles" id="getAllCharacters">Get all characters</p>
+	
+					<p class="text-doc">
+						All the characters can be got by accessing to <code id="count"> /characters</code> endpoint.
+					</p>
+
+					<div class="square-api">
+							<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/characters</code>
+						</span>
+					
+					</div>
+					<div class="square-api-json mt-1">
+						<pre class="pt-3">
+							<code>
+		    <span>{</span>		
+			 <span class="key">results</span>: <span>[</span>
+			    <span>{</span>
+				<span class="key">id</span>: <span class="int">1</span>,
+				<span class="key">name</span>: <span class="string">"Scott Summers"</span>,
+				<span class="key">alias</span>: <span class="string">"Cyclops"</span>,
+				<span class="key">description</span>: <span class="string">"He is one of the founding members of the X-Men."</span>,
+				<span class="key">powers</span>: <span class="string">"Eye Energy Beams"</span>
+				<span class="key">img</span>: <span class="string">"https://cdn.glitch.com/5efd623c-8d1a-4031-846f-78e99ba712ac%2FCyclops.webp"</span>,
+				<span class="key">affiliation</span>: <span class="string">"X-Men"</span>,
+				<span class="key">created</span>: <span class="string">"2020-12-26T19:48:26.027Z"</span>
+		             <span>},</span>...
+			 <span class="key">]</span>,
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int" id="count-json"></span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">2</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="string">https://xmenapiheroku.herokuapp.com/api/characters?page=2</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+					</div>
+
+					<!-- // Get a single character  -->
+
+					<p class="subtitles" id="getOneCharacter">Get one character  by ID</p>
+
+					<p class="text-doc">
+						It is possible using the <span class="end-point">id</span> of the character like a parameter on the route:  <code class="end-point">/characters/3</code>.
+					</p>
+
+					<div class="square-api">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/characters/3</code>
+					</span>
+				
+				</div>
+
+
+					<div class="square-api-json mt-1">
+						<pre class="pt-3"><code>
+		    <span>{</span>		
+			 <span class="key">id</span>: <span class="int">3</span>,
+			 <span class="key">name</span>: <span class="string">"Charles Xavier"</span>,
+			 <span class="key">alias</span>: <span class="string">"Professor X"</span>,
+			 <span class="key">description</span>: <span class="string">"He is a powerful telepathic mutant and leader of the X-Men"</span>,
+			 <span class="key">powers</span>: <span class="string">"Telepathy"</span>,
+			 <span class="key">img</span>: <span class="string">"https://cdn.glitch.com/5efd623c-8d1a-4031-846f-78e99ba712ac%2FProfessor_X.webp"</span>,
+			 <span class="key">affiliation</span>: <span class="string">"X-Men"</span>
+			 <span class="key">created</span>: <span class="string">"2020-12-26T19:49:09.863Z"</span>
+		    <span>}</span></code></pre>
+					</div>
+
+					<!-- Filter: name & alias  -->
+
+					<p class="subtitles" id="applyFilterCharacter">Apply filter</p>
+
+
+					<p class="text-doc">
+						In case you know the (total/partial) <u style="color:red">name</u> or <u style="color:red">alias</u> of the character, is possible to query on the endpoint. You must use <code class="end-point">?</code> on the URL and follow the syntax <code class="end-point">name=value</code>. 
+						For example, you must type something like this: <a id="link-filter" target="_blank" href="https://xmenapiheroku.herokuapp.com/api/characters/?name=logan"><code class="end-point">../characters/?name=logan</code></a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>.</p>
+					<p> </p>
+					
+
+					<div class="square-api">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/characters/?name=beast</code>
+					</span>
+				
+					</div>
+
+					<div class="square-api-json mt-1">
+						<pre class="pt-3"><code >
+		    <span>{</span>		
+			 <span class="key">results</span>: <span>[</span>
+			    <span>{</span>
+				<span class="key">id</span>: <span class="int">6</span>,
+				<span class="key">name</span>: <span class="string">"Dr. Hank McCoy"</span>,
+				<span class="key">alias</span>: <span class="string">"Beast"</span>,
+				<span class="key">description</span>: <span class="string">"He is one of the original members of the X-Men. He has been with the team throughout its history. He has extensive knowledge in 
+				chemistry and biology, whose own research was used to nearly destroy mutantkind. He has also been a member of the Avengers"</span>,
+				<span class="key">powers</span>: <span>[</span>
+				   <span class="string">"Extraordinary Agility"</span>,
+				   <span class="string">"Superhuman Strength"</span>,
+				   <span class="string">"Blue Beast-like Appearance"</span>,
+				<span class="key">]</span>,
+				<span class="key">img</span>: <span class="string">"https://cdn.glitch.com/5efd623c-8d1a-4031-846f-78e99ba712ac%2FBeast.webp"</span>,
+				<span class="key">affiliation</span>: <span class="string">"X-Men"</span>,
+				<span class="key">created</span>: <span class="string">"2020-12-26T19:49:37.308Z"</span>
+			    <span>}</span>
+			 <span class="key">]</span>,
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int" id="count-json">1</span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">1</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="null">null</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+					</div>
+
+
+				<!-- EPISODES -->
+				
+				<p class="titles" id="episodes">Episodes</p>
+	
+					<p class="text-doc">
+						The API contains the
+						<code id="count"> 76</code> episodes of the serie created by Marvel and produced by Saban Entertainment. 
+						The episodes order follow the list published on Disney + platform.
+					</p>
+					<p class="subtitles" id="episodeData">Episode data</p>
+	
+					<table id="props">
+						<thead>
+							<tr class="title-table-schema">
+								<th>Key</th>
+								<th>Type</th>
+								<th>Characteristics</th>
+							</tr>
+							<tr class="data-table-schema">
+								<td>id</td>
+								<td>int</td>
+								<td>Episode id number</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>title</td>
+								<td>string</td>
+								<td>Episode name</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>number</td>
+								<td>string</td>
+								<td>Season and number of the episode</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>air date</td>
+								<td>string</td>
+								<td>Emission date on tv</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>created</td>
+								<td>string</td>
+								<td>Object creation date</td>
+							</tr>
+							<tr class="data-table-schema">
+								<td>plot</td>
+								<td>string</td>
+								<td>Synopsis of the episode</td>
+							</tr>
+						</thead>
+					</table>
+				
+										<!-- // Get all episodes  -->
+
+					<p class="subtitles" id="getAllEpisodes">Get all episodes</p>
+	
+					<p class="text-doc">
+						All the episodes can be got by accessing to <code id="count"> /episodes</code> endpoint.
+					</p>
+
+					<div class="square-api">
+							<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/episodes</code>
+						</span>
+					
+					</div>
+					<div class="square-api-json mt-1">
+						<pre class="pt-3">
+							<code>
+		    <span>{</span>		
+			 <span class="key">results</span>: <span>[</span>
+			    <span>{</span>
+				<span class="key">id</span>: <span class="int">1</span>,
+				<span class="key">title</span>: <span class="string">"Night of the Sentinels, Part One"</span>,
+				<span class="key">number</span>: <span class="string">"S01E01"</span>,
+				<span class="key">air_date</span>: <span class="string">"31/10/1992"</span>,
+				<span class="key">created</span>: <span class="string">"2020-12-24T12:39:50.500Z"</span>
+				<span class="key">plot</span>: <span class="string">"A young teenager has been rejecting her mutant powers ever since she discovered them. But when giant robots track her down, it's up to 
+				the X-Men to save her."</span>
+		            <span>},</span>...
+			 <span class="key">]</span>,
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int">76</span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">4</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="string">"https://xmenapiheroku.herokuapp.com/api/episodes?page=2"</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+					</div>
+
+					<!-- // Get a single episode  -->
+
+					<p class="subtitles" id="getOneEpisode">Get one episode by ID</p>
+
+					<p class="text-doc">
+						It is possible using the <span class="end-point">id</span> of the episode like a parameter on the route:  <code class="end-point">/episode/12</code>.
+					</p>
+
+					<div class="square-api">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/episode/12</code>
+					</span>
+				
+				</div>
+
+
+					<div class="square-api-json mt-1">
+						<pre class="pt-3"><code>
+		    <span>{</span>		
+			 <span class="key">id</span>: <span class="int">12</span>,
+			 <span class="key">title</span>: <span class="string">"Days of Future Past (Part 2 of 2)"</span>,
+			 <span class="key">number</span>: <span class="string">"S01E12"</span>,
+			 <span class="key">air_date</span>: <span class="string">"20/03/1993"</span>,
+			 <span class="key">created</span>: <span class="string">"2020-12-24T13:20:18.674Z"</span>
+			 <span class="key">plot</span>: <span class="string">"Gambit sets out to prove his innocence by thwarting an assassination he supposedly caused. Can he succeed?"</span>
+		    <span>}</span></code></pre>
+					</div>
+
+					<!-- Filter: espisode & season  -->
+
+				<div class="mb-4">
+
+				
+					<p class="subtitles" id="applyFilterEpisode">Apply filter</p>
+
+
+					<p class="text-doc">
+						In case you know the number of <u style="color:red">season</u>, the number of <u style="color:red">episode</u> or both, is possible to query on the endpoint. You must use <code class="end-point">?</code> on the URL and follow the syntax <code class="end-point">number=value</code>. 
+						For example, you must type something like this: <a id="link-filter" target="_blank" href="https://xmenapiheroku.herokuapp.com/api/episodes?number=S04E05"><code class="end-point">../episodes/?number=S04E05</code></a> <i style="font-size: 20px;" class="fas fa-external-link-alt"></i>. 
+						One example applying a filter by season could be: <code class="end-point">../episodes/?number=S01</code> and by episode: <code class="end-point">../episodes/?number=E01</code>.
+						You can do your petition using both lowercase and uppercase.</p>
+					<p> </p>
+					
+
+					<div class="square-api">
+						<span> <span class="petition mr-2"> GET </span> xmenapiheroku.herokuapp.com/api<code class="end-point">/episodes?number=E05</code>
+					</span>
+				
+					</div>
+
+					<div class="square-api-json mt-1">
+						<pre class="pt-3"><code >
+		    <span>{</span>		
+			 <span class="key">results</span>: <span>[</span>
+			    <span>{</span>
+			        <span class="key">id</span>: <span class="int">5</span>,
+				<span class="key">title</span>: <span class="string">"Captive Hearts"</span>,
+				<span class="key">number</span>: <span class="string">"S01E05"</span>,
+				<span class="key">air_date</span>: <span class="string">"30/01/1993"</span>,
+				<span class="key">created</span>: <span class="string">"2020-12-24T13:19:10.428Z"</span>
+				<span class="key">plot</span>: <span class="string">"Wolverine has strong feeling for Jean Grey, but she's with Cyclops. Storm has a paralyzing case of claustrophobia and must overcome this as 
+				the X-Men venture into the New York sewers to rescue Jean Grey and Cyclops from a deformed race of mutants called the Morlocks. Storm confronts 
+				the leader of the Morlocks, Callisto, who wants Cyclops to rule beside her as king."</span>
+			    <span>}</span>,
+			    <span>{</span>
+			        <span class="key">id</span>: <span class="int">18</span>,
+				<span class="key">title</span>: <span class="string">Repo Man"</span>,
+				<span class="key">number</span>: <span class="string">"S02E05"</span>,
+				<span class="key">air_date</span>: <span class="string">"20/11/1993"</span>,
+				<span class="key">created</span>: <span class="string">"2020-12-24T13:20:18.674Z"</span>
+				<span class="key">plot</span>: <span class="string">"After Wolverine has been lured to Canada by an alleged message from his old friend, Heather Hudson, he finds himself fighting Heather's husband, 
+				Vindicator, and the Canadian super team, Alpha Flight, instead. Alpha Flight believes that they were only sent after Wolverine to get him to rejoin their team. However, their General Chasen has
+				a more sinister agenda: to retrieve Wolverine's adamantium skeleton -- at any cost."</span>
+			    <span>}</span>...
+			 <span class="key">]</span>,
+			 <span class="key">info</span>: <span>{</span>
+			    <span class="key">count</span>: <span class="int">5</span>,
+			    <span class="key">limit</span>: <span class="int">20</span>,
+			    <span class="key">pageCount</span>: <span class="int">1</span>,
+			    <span class="key">page</span>: <span class="int">1</span>,
+			    <span class="key">prev</span>: <span class="null">null</span>,
+			    <span class="key">next</span>: <span class="null">null</span>
+			 <span>}</span>
+		    <span>}</span></code></pre>
+					</div>
+				
+				</div>
+				</div>
+			</div>
+
+		</div>
+		<footer>
+			<div class="row">
+				<div class="col-12 col-md-4">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th></th>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Information access (JSON)
+                            </u>
+                        </th>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/characters" target="_blank">
+                                CHARACTERS</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img class="mr-1" id="logo-footer" src="img/icon_html.png"></td>
+                            <td><a class="link" href="https://xmenapiheroku.herokuapp.com/api/episodes" target="_blank">
+                                EPISODES</a> 
+                                <i style="font-size: 25px;" class="fas fa-external-link-alt ml-2"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;">2021</th>
+						</tr>
+						<tr>
+                            <td><a class="link" href="https://github.com/Ste-Mar/API_Xmen_Animated_Series" target="_blank"><i class="fab fa-github"></i></a></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+				<div class="col-12 col-md-4 ">
+                    <table class="tables mt-2">
+                        <tr>
+                            <th style="font-family:Oswald, sans-serif;font-size: 30px;"><u>
+                                Authors</th>
+                            </u>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Nicolas Bulgarella</td>
+                            <td><a class="link" href="https://github.com/bulga138" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/nicolas-bulgarella/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: Bangers, Times New Roman;font-size: 25px">Stefano Marcaccio</td>
+                            <td><a class="link" href="https://github.com/Ste-Mar" target="_blank"><i class="fab fa-github"></i></a></td>
+
+                            <td><a class="link" href="https://www.linkedin.com/in/stefanomarcaccio/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+				</div>
+		</footer>
+	</body>
+</html>
