@@ -213,6 +213,17 @@ table {
 	font-weight: bold;
 }
 
+.end-point-external {
+	color: red;
+	font-weight: bold;
+	text-decoration: 4px underline yellow;
+}
+
+.end-point-external:hover {
+	color: blue;
+	text-decoration: none;
+}
+
 .square-api-json {
 	background-color: yellow;
 	border: 1px solid red;
@@ -249,10 +260,6 @@ table {
 	color: black;
 }
 
-#link-filter:hover {
-	background-color: yellow;
-}
-
 footer {
 	background-color: red;
 }
@@ -266,4 +273,5 @@ footer {
 #logo-footer {
 	width: 30px;
 	height: 30px;
+	margin-right: 0px !important;
 }

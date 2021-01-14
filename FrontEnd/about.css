@@ -51,6 +51,17 @@ header {
 	color: black;
 }
 
+.external-link {
+	text-decoration: 3px underline rgb(238, 255, 0);
+	font-family: Bangers, Times New Roman;
+	color: red;
+}
+
+.external-link:hover {
+	color: blue;
+	text-decoration: none;
+}
+
 .background {
 	position: relative;
 	opacity: initial;
@@ -92,4 +103,5 @@ footer {
 #logo-footer {
 	width: 30px;
 	height: 30px;
+	margin-right: 0px !important;
 }

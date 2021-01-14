@@ -192,13 +192,10 @@ li {
 	margin-bottom: -10px;
 }
 
-td {
-	padding-left: 10px;
-}
-
 #logo-footer {
 	width: 30px;
 	height: 30px;
+	margin-right: 0px !important;
 }
 
 .link {
