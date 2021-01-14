@@ -6,8 +6,6 @@ _X-MEN API is a RESTful based on the animated series homonymous. You can access 
 
 ## Platforms 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 -    [Node](https://nodejs.org/en/) - BackEnd
 -    [MongoDB](https://www.mongodb.com/es) - Database
 -    [Heroku](https://www.heroku.com/) - Hosting/Deploying API
