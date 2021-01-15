@@ -1,0 +1,4 @@
+{
+    "characters": "https://xmenapiheroku.herokuapp.com/api/characters",
+    "episodes":	"https://xmenapiheroku.herokuapp.com/api/episodes"
+}

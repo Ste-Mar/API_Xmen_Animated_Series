@@ -1,0 +1,15 @@
+#Folders
+/node_modules
+/database
+/tests
+
+
+#Files
+autocomplete.*
+index.*
+Mejoras v2.txt
+requests.rest
+*ost*.*
+
+#Environment Variable
+.env
