@@ -14,7 +14,7 @@ _X-MEN API is a RESTful based on the animated series homonymous. You can access 
 
 ## Start to use it 💻
 
-You can begin to interact with our API, through the documentation on our website: [Documentation](https://github.com/tu/proyecto/wiki)
+You can begin to interact with our API, through the documentation on our website: [Documentation](https://api-xmen-animated-series.netlify.app/doc.html)
 
 ## Authors ✏️
 
